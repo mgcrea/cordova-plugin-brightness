@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-		xmlns:android="http://schemas.android.com/apk/res/android" 
+		xmlns:android="http://schemas.android.com/apk/res/android"
            id="cordova.plugin.Brightness"
       version="0.1.1">
     <name>Brightness</name>
 
 	<author>Evgeniy Lukovsky</author>
-	
+
 	<license>MIT</license>
-	
+
 	<description>
 		This plugin gives you the ability to get and set the screen brightness
 	</description>
-	
+
     <js-module src="www/brightness.js" name="Brightness">
         <clobbers target="cordova.plugins.brightness" />
     </js-module>
-    
+
 	<info>
 		This plugin gives you the ability to get and set the screen brightness. Also recently I have added the function for keep screen on.
 	</info>
@@ -34,11 +34,11 @@
         </config-file>
 
 	<source-file src="src/android/BrightnessPlugin.java" target-dir="src/org/apache/cordova/plugin/Brightness" />
-      
+
      </platform>
-     
+
      <!-- ios -->
-     <platform name="ios">    
+     <platform name="ios">
          <config-file target="config.xml" parent="/*">
              <feature name="Brightness">
                  <param name="ios-package" value="Brightness" />
@@ -51,5 +51,5 @@
 	 <framework src="UIKit.framework" weak="true" />
 
      </platform>
-          
-</plugin> 
+
+</plugin>

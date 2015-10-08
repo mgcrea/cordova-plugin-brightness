@@ -1,49 +1,77 @@
-phonegap-plugin-brightness
-==========================
+# [Cordova Brightness](https://github.com/mgcrea/cordova-plugin-brightness) [![Release](https://img.shields.io/npm/v/cordova-volume-control.svg?style=flat)](https://github.com/mgcrea/cordova-plugin-brightness/releases)
 
-A phonegap 3.x plugin for brightness control within android and ios.
-Also recently I have added the function for keep screen on.
+This plugin provides a simple way to interact with the brightness of your device.
 
-Installing
-======
-You may use phonegap CLI as follows:
+* This plugin is built for `cordova@^3.6`.
 
-<pre>
-➜ phonegap local plugin add https://github.com/fiscal-cliff/phonegap-plugin-brightness.git
-[phonegap] adding the plugin: https://github.com/fiscal-cliff/phonegap-plugin-brightness.git
-[phonegap] successfully added the plugin
-</pre>
+* This plugin currently supports both iOS and Android.
 
-Using
-====
-The code below can be placed into script tag.
 
-```javascript
-		document.addEventListener('deviceready', onDeviceReady);
-		function onDeviceReady() {
-			window.brightness = cordova.require("cordova.plugin.Brightness.Brightness");
-		}
-		function setBrightness(value) {
-			// value should be float in range from 0 to 1.
-			brightness.setBrightness(value, win, fail);
-		}
-		function getBrightness() {
-			// win([-1,0-1]) float 0-1 is a brightness level, -1 represents a system default
-			brightness.getBrightness( win, fail);
-		}
-		function win(status) {
-			alert('Message: ' + status);
-		}
-		function fail(status) {
-			alert('Error: ' + status);
-		}
-```
+## Plugin setup
 
-You may also prevent a sleep (or keep screen on).
+Using this plugin requires [Cordova iOS](https://github.com/apache/cordova-ios).
 
-```javascript
-		// prevents sleep
-		brightness.setKeepScreenOn(true);
-		// returns normal behavior
-		pluginService.brightness.setKeepScreenOn(false);
-```
+1. `cordova plugin add cordova-plugin-brightness`
+
+
+## Javascript interface
+
+    // After device ready, create a local alias
+    var VolumeControl = cordova.plugins.brightness;
+
+    // value should be float in range from 0 to 1.
+    brightness.setBrightness(value, success, error);
+    // success([-1,0-1]) float 0-1 is a brightness level, -1 represents a system default
+    brightness.getBrightness(success, error);
+    // prevents sleep
+    brightness.setKeepScreenOn(true);
+
+* Check [source](https://github.com/mgcrea/cordova-plugin-brightness/tree/master/www/brightness.js) for additional configuration.
+
+
+## Communication
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/cordova). (Tag `cordova`)
+- If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/cordova).
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
+
+## Contributing
+
+Patches welcome! Send a pull request. Since this is not a part of Cordova Core (which requires a CLA), this should be easier.
+
+Please submit all pull requests the against master branch. If your pull request contains JavaScript patches or features, you should include relevant unit tests. Thanks!
+
+
+## Authors
+
+**Evgeniy Lukovsky**
+
++ http://github.com/fiscal-cliff
+
+
+## Copyright and license
+
+    The MIT License (MIT)
+
+    Copyright (c) 2015 Evgeniy Lukovsky
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.

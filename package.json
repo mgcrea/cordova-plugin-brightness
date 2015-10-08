@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-brightness",
+  "version": "0.1.1",
+  "description": "Cordova Brightness Control Plugin",
+  "cordova": {
+    "id": "cordova-plugin-brightness",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgcrea/cordova-plugin-brightness"
+  },
+  "keywords": [
+    "cordova",
+    "unity",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova-ios",
+      "version": ">=3.6.0"
+    }
+  ],
+  "author": "Evgeniy Lukovsky",
+  "license": "MIT"
+}
