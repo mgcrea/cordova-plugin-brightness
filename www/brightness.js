@@ -1,26 +1,15 @@
- /*
- * @author Evgeniy Lukovsky
- * */
+'use strict';
 
-	var exec = require('cordova/exec');
+var exec = require('cordova/exec');
 
-	var Brightness=function(){
-	};
+exports.getBrightness = function( success, error) {
+  exec(success, error, 'Brightness', 'getBrightness', []);
+};
 
-	Brightness.prototype.getBrightness = function( successCallback, errorCallback) 
-	{
-		return cordova.exec(successCallback, errorCallback, "Brightness", "getBrightness", []);
-	};
+exports.setBrightness = function(value, success, error) {
+  exec(success, error, 'Brightness', 'isMuted', [value]);
+};
 
-	Brightness.prototype.setBrightness = function(value, successCallback, errorCallback) 
-	{
-		return cordova.exec(successCallback, errorCallback, "Brightness", "setBrightness", [value]);
-	};
-
-	Brightness.prototype.setKeepScreenOn = function(value, successCallback, errorCallback) 
-	{
-		return cordova.exec(successCallback, errorCallback, "Brightness", "setKeepScreenOn", [value]);
-	};
-
-	module.exports= new Brightness();
-
+exports.setKeepScreenOn = function(value, success, error) {
+  exec(success, error, 'Brightness', 'setKeepScreenOn', [value]);
+};

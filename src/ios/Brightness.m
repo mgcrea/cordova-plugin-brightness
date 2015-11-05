@@ -23,7 +23,7 @@
     NSString *value = [command.arguments objectAtIndex:0];
     float brightness = [value floatValue];
     [UIScreen mainScreen].brightness = brightness;
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"OK"];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -32,7 +32,7 @@
     CDVPluginResult* pluginResult = nil;
     BOOL value = [[command.arguments objectAtIndex:0] boolValue];
     [UIApplication sharedApplication].idleTimerDisabled = value;
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"OK"];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
