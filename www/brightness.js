@@ -7,7 +7,7 @@ exports.getBrightness = function( success, error) {
 };
 
 exports.setBrightness = function(value, success, error) {
-  exec(success, error, 'Brightness', 'isMuted', [value]);
+  exec(success, error, 'Brightness', 'setBrightness', [value]);
 };
 
 exports.setKeepScreenOn = function(value, success, error) {
