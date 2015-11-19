@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-brightness",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Cordova Brightness Control Plugin",
   "cordova": {
     "id": "cordova-plugin-brightness",
