@@ -1,4 +1,4 @@
-# [Cordova Brightness](https://github.com/mgcrea/cordova-plugin-brightness) [![Release](https://img.shields.io/npm/v/cordova-volume-control.svg?style=flat)](https://github.com/mgcrea/cordova-plugin-brightness/releases)
+# [Cordova Brightness](https://github.com/mgcrea/cordova-plugin-brightness) [![Release](https://img.shields.io/npm/v/cordova-plugin-brightness.svg?style=flat)](https://github.com/mgcrea/cordova-plugin-brightness/releases)
 
 This plugin provides a simple way to interact with the brightness of your device.
 
