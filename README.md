@@ -17,7 +17,7 @@ Using this plugin requires [Cordova iOS](https://github.com/apache/cordova-ios).
 ## Javascript interface
 
     // After device ready, create a local alias
-    var VolumeControl = cordova.plugins.brightness;
+    var brightness = cordova.plugins.brightness;
 
     // value should be float in range from 0 to 1.
     brightness.setBrightness(value, success, error);
