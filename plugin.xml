@@ -29,9 +29,6 @@
                 <param name="android-package" value="org.apache.cordova.plugin.Brightness.BrightnessPlugin"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-        </config-file>
 
 	<source-file src="src/android/BrightnessPlugin.java" target-dir="src/org/apache/cordova/plugin/Brightness" />
 
