@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.provider.Settings;
 import android.view.WindowManager.LayoutParams;
 import android.view.WindowManager;
 import android.view.Window;
@@ -116,6 +117,13 @@ public class BrightnessPlugin extends CordovaPlugin {
 			Activity activity = cordova.getActivity();
 			WindowManager.LayoutParams layoutParams = activity.getWindow().getAttributes();
 			Double brightness = (double) layoutParams.screenBrightness;
+			if (brightness < 0.0) {
+				int systemBrightness = Settings.System.getInt(activity.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, -1);
+				if (systemBrightness >= 0) {
+					brightness = systemBrightness / 255.0;
+				}
+			}
+
 			callbackContext.success(brightness.toString());
 
 		} catch (NullPointerException e) {
